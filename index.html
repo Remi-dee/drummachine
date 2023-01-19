@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <metbutton charset="utf-8">
+    <metbutton name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <script>
+       
+       
+
+       const quoteDisplay = {
+        Q : "Quote on Ambition",
+        W : "Quote on Family",
+        E : "Quote on Problems",
+        A : "Quote on Wahala",
+        S : "Quote on Riches",
+        D : "Quote on Secret",
+        Z : "Quote on Dream",
+        X : "Quote on Success",
+        C : "Quote on Greatness",
+       };
+
+       
+
+      
+      
+       function play (str) {
+        const audio = document.querySelector("#" + str);
+        
+        if(audio.paused || audio.ended) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+        
+        document.querySelector("#display").innerText = quoteDisplay[str];
+        const card = document.querySelector(".card");
+        card.style.background = "green";
+        card.style.color = "white";
+        
+        if(audio.ended) {
+        display.innerText="Press or QClick Any of the Keys Below To Play Quote"
+       }
+       
+      }
+
+     
+
+      window.document.onkeyup = function(event) {
+        console.log(event.key)
+      event.key === "q" || event.key === "Q" ? play('Q'):
+      event.key === "w" || event.key === "W" ? play('W'):
+      event.key === "e" || event.key === "E" ? play('E'):
+      event.key === "a" || event.key === "A" ? play('A'):
+      event.key === "s" || event.key === "S" ? play('S'):
+      event.key === "d" || event.key === "D" ? play('D'):
+      event.key === "z" || event.key === "Z" ? play('Z'):
+      event.key === "x" || event.key === "X" ? play('X'):
+      event.key === "c" || event.key === "C" ? play('C'):"";
+      }
+      </script>
+
+      
+
+      
+
+  
+  </head>
+  
+  <body>
+  
+    <div class="container text-center" id="drum-machine" >
+    <h1>ALBERT EINSTEIN'S QUOTES</h1>
+    
+    <div class="card py-4 my-2">
+      <div class="body">
+        <div class="text-center" id="display">Press or Click Any Key Listed Below To Play Quote
+           </div>
+      </div>
+    </div> 
+     
+    <div class="d-grid gap-2">
+        <button src="" class="btn btn-outline-primary btn-block drum-pad" id="onDreams2" onclick="play('Q')" >
+          Q
+          <audio src="./audio/onDreams2.mp4" class="clip" id="Q"></audio>
+        </button>
+
+        <button src="" class="drum-pad btn btn-outline-secondary" id="onFamilySecrets" onclick="play('W')">
+          W
+          <audio src="./audio/onFamilySecrets.mp4" class="clip" id="W"></audio>
+        </button>
+
+        <button src="" class="drum-pad btn btn-outline-success" id="onProblem" onclick="play('E')">
+          E
+          <audio src="./audio/onProblem.mp4" class="clip" id="E"></audio>
+        </button>
+
+        <button src="" class="drum-pad btn btn-outline-danger" id="onProblem2" onclick="play('A')">
+          A
+          <audio src="./audio/onProblem2.mp4" class="clip" id="A"></audio>
+        </button>
+
+        <button src="" class="drum-pad btn btn-outline-warning" id="onRiches" onclick="play('S')">
+          S
+          <audio src="./audio/onRiches.mp4" class="clip" id="S"></audio>
+        </button>
+
+        <button src="" class="drum-pad btn btn-outline-info" id="onSecret" onclick="play('D')">
+          D
+          <audio src="./audio/onSecret.mp4" class="clip" id="D"></audio>
+        </button>
+        <button src="" class="drum-pad btn btn-outline-success" id="onShare" onclick="play('Z')">
+          Z
+          <audio src="./audio/onShare.mp4" class="clip" id="Z"></audio>
+        </button>
+        <button src="" class="drum-pad btn btn-outline-dark" id="onSuccess" onclick="play('X')">
+          X
+          <audio src="./audio/onSuccess.mp4" class="clip" id="X"></audio>
+        </button>
+
+        <button src="" class="drum-pad btn btn-outline-primary" id="onSuccess2" onclick="play('C')">
+          C
+          <audio src="./audio/onSuccess2.mp4" class="clip" id="C"></audio>
+        </button>
+      </div>
+    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>>
